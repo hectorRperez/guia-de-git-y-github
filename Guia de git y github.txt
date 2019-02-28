@@ -1,4 +1,4 @@
-    //comandos importantes 
+﻿    //comandos importantes 
 
 ls -la -> Para ver todas las carpetas y sub carpetas
 mkdir "[nombre de la carpeta]" -> comando con la terminal para crear una carpeta
@@ -50,3 +50,25 @@ mkdir "[nombre de la carpeta]" -> comando con la terminal para crear una carpeta
     $git fetch origin
     $git merge origin/master
     $git push origin master
+-----------------------------------------------------------------------------------------------------------------------
+
+5)Repositorios Forked
+
+    1) Actualizamos siempre con el repositorio principal, antes de comenzar
+    2) Desarrollar y, antes de subir a nuestro repositorio "Forked", revisar nuevamentes cambios 
+    3) Subir a nuestro repositorio "Forked" todo lo que hemos hecho.
+    4) Ejecutar un "Pull Request"
+
+Paso para ejecuta el "Pull Request"
+
+    1) Crear una carpeta para proyecto
+    2) git remote add origin [HTTPS o SSH del proyecto forked]
+    3) git remote add upstream [HTTPS o SSH del proyecto principal]
+    4)git fetch upstream
+    5)git merge origin/upstream
+    6)git fetch origin
+    7)git merge origin/master
+    *** Hacer cambios en local ***
+    8)git fetch upstream
+    9)git merge origin/upstream
+    10)git push origin master 
