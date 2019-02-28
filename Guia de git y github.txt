@@ -68,7 +68,9 @@ Paso para ejecuta el "Pull Request"
     5)git merge origin/upstream
     6)git fetch origin
     7)git merge origin/master
+
     *** Hacer cambios en local ***
+    
     8)git fetch upstream
     9)git merge origin/upstream
     10)git push origin master 
