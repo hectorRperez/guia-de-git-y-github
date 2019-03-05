@@ -36,7 +36,11 @@ mkdir "[nombre de la carpeta]" -> comando con la terminal para crear una carpeta
     $git init
     $git remote add origin [SSH] //Origin es el nombre estandar que se le coloca a las conexiones
     $git remote -v //Se verifica que se establecio la conexión
-    $git commit am- "[Mensaje]"
+    $git fetch origin // Igual hay que descargar los archivos en github así sea un repositorio individual
+    $git merge origin/master //Se fusiona la rama origin con master en local
+
+    **Desarrollamos**
+    
     $git push origin master //Se envía la rama master de local a github vía origin(origin es el nombre de la conexión)
 
 -----------------------------------------------------------------------------------------------------------------------
