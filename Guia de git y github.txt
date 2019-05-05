@@ -20,8 +20,18 @@ $git log -p -> Te muestra cuantas lineas de modificaron, se agregaron o se elimi
 $git shortlog -> Te muestra en que anda trabajando cada programador
 
 $git commit -m ["Mensaje del commit "] --amend -> Comando para revertir el ultimo commit por otro
+
 ----------------------------------------------------------------------------------------------------------------------
-1) Deployment de local a github
+
+1)Clonar repositorio de github(Para clonar a local usar conexion HTTPS) sin pensar en colaboración
+    
+    Al clonar un repositorio de github tambien se clonan todos los commit y cambios
+
+    $git clone [repositorio vía SSH o HTTPS]
+
+--------------------------------------------------------------------------------------------------------------------
+
+2) Deployment de local a github
 
     1.1 Crear usuario en github
 
@@ -30,6 +40,7 @@ $git commit -m ["Mensaje del commit "] --amend -> Comando para revertir el ultim
     1.3 Conectar con llave SSH a github, desde tu area local
 
         //Como crear llave ssh con la terminal
+
         $ssh-keygen -t rsa -b 4096 -C "[email de tu cuenta en github]"
         dar enter. Aceptar la localización por defecto
         contraseña
@@ -37,17 +48,7 @@ $git commit -m ["Mensaje del commit "] --amend -> Comando para revertir el ultim
         //El comando cat se utiliza para mostrar la llave 
         $cat id_rsa.pub 
 
-
-----------------------------------------------------------------------------------------------------------------------
-
-2)Clonar repositorio de github(Para clonar a local usar conexion HTTPS) sin pensar en colaboración
-    
-    Al clonar un repositorio de github tambien se clonan todos los commit y cambios
-
-    $git clone [repositorio vía SSH o HTTPS]
-
 --------------------------------------------------------------------------------------------------------------------
-
 
 3) Iteración basica y subir a github (Cuando se tiene un repositorio individual)
 
@@ -61,7 +62,7 @@ $git commit -m ["Mensaje del commit "] --amend -> Comando para revertir el ultim
 
 4) Subir a producción con colaboración
 
-    $git remote dd origin [SSH] //Origin es el nombre estandar que se le coloca a las conexiones
+    $git remote add origin [SSH] //Origin es el nombre estandar que se le coloca a las conexiones
     $git fetch origin // fetch es la rama oculta que copia lo que esta en el repositorio
     $git merge origin/master //Se fusiona la rama origin con master en local
         ** Desarrollamos **
