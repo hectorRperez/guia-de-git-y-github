@@ -1,10 +1,26 @@
-﻿    //comandos importantes 
+﻿//comandos importantes 
 
 ls -la -> Para ver todas las carpetas y sub carpetas
 mkdir "[nombre de la carpeta]" -> comando con la terminal para crear una carpeta
 
+rmdir -> Borrar una carpeta
 
+DEL -> Falta saber mas de este comando
 
+rm -rf -> Borrar carpetas y subcarpetas
+
+Borrar ramas -> git branch -d[nombre de la rama]
+
+$git commit am- ["Mensaje del commit"] -> comando para agregar un commit directo sin pasar por git add -A
+
+$log --stat -> Te muestra las lineas de codigos que se agregaron o se quitaron
+
+$git log -p -> Te muestra cuantas lineas de modificaron, se agregaron o se eliminaron
+
+$git shortlog -> Te muestra en que anda trabajando cada programador
+
+$git commit -m ["Mensaje del commit "] --amend -> Comando para revertir el ultimo commit por otro
+----------------------------------------------------------------------------------------------------------------------
 1) Deployment de local a github
 
     1.1 Crear usuario en github
@@ -24,7 +40,9 @@ mkdir "[nombre de la carpeta]" -> comando con la terminal para crear una carpeta
 
 ----------------------------------------------------------------------------------------------------------------------
 
-2)Clonar repositorio de github(Para clonar a local usar conexion HTTPS)
+2)Clonar repositorio de github(Para clonar a local usar conexion HTTPS) sin pensar en colaboración
+    
+    Al clonar un repositorio de github tambien se clonan todos los commit y cambios
 
     $git clone [repositorio vía SSH o HTTPS]
 
@@ -36,11 +54,7 @@ mkdir "[nombre de la carpeta]" -> comando con la terminal para crear una carpeta
     $git init
     $git remote add origin [SSH] //Origin es el nombre estandar que se le coloca a las conexiones
     $git remote -v //Se verifica que se establecio la conexión
-    $git fetch origin // Igual hay que descargar los archivos en github así sea un repositorio individual
-    $git merge origin/master //Se fusiona la rama origin con master en local
-
-    **Desarrollamos**
-
+    $git commit am- "[Mensaje]"
     $git push origin master //Se envía la rama master de local a github vía origin(origin es el nombre de la conexión)
 
 -----------------------------------------------------------------------------------------------------------------------
@@ -54,31 +68,26 @@ mkdir "[nombre de la carpeta]" -> comando con la terminal para crear una carpeta
     $git fetch origin
     $git merge origin/master
     $git push origin master
+
 -----------------------------------------------------------------------------------------------------------------------
 
 5)Repositorios Forked
 
     1) Actualizamos siempre con el repositorio principal, antes de comenzar
-    2) Desarrollar y, antes de subir a nuestro repositorio "Forked", revisar nuevamentes cambios (Actualizar)
+    2) Desarrollar y, antes de subir a nuestro repositorio "Forked", revisar nuevamentes cambios 
     3) Subir a nuestro repositorio "Forked" todo lo que hemos hecho.
     4) Ejecutar un "Pull Request"
 
 Paso para ejecuta el "Pull Request"
 
     1) Crear una carpeta para proyecto
-
     2) git remote add origin [HTTPS o SSH del proyecto forked]
     3) git remote add upstream [HTTPS o SSH del proyecto principal]
-    4) git fetch origin (Se actualiza la rama escondida (origin) con el repositorio original)
-    5) git merge origin/master (Se fuciona la rama master en local con la rama forke)
-    6) git fetch upstream (Se actualiza la rama escondida (upstream) con el repositorio original)
-    7) git merge upstream/master
-
-    *** Desarrollamos en local ***
-
-    8)  git fetch origin (Se actualiza la rama escondida (origin) con el repositorio original)
-    9)  git merge origin/master (Se fuciona la rama master en local con la rama forke)
-    10) git fetch upstream (Se actualiza la rama escondida (upstream) con el repositorio original)
-    11) git merge upstream/master
-    12) git push origin master 
-    
+    4)git fetch upstream
+    5)git merge origin/upstream
+    6)git fetch origin
+    7)git merge origin/master
+    *** Hacer cambios en local ***
+    8)git fetch upstream
+    9)git merge origin/upstream
+    10)git push origin master 
